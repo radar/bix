@@ -3,6 +3,9 @@ Bix::Application.boot(:persistence) do |app|
     config = app['db.config']
     config.auto_registration(app.root + "lib/bix")
 
-    register('container', ROM.container(app['db.config']))
+    container = ROM.container(:sql, app['db.connection']) do |config|
+      config.auto_registration(app.root + "lib/bix")
+    end
+    register('container', container)
   end
 end

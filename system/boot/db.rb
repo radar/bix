@@ -3,6 +3,6 @@ Bix::Application.boot(:db) do
     require "rom"
     require "rom-sql"
 
-    register('db.config', ROM::Configuration.new(:sql, ENV['DATABASE_URL']))
+    register('db.connection', Sequel.connect(ENV['DATABASE_URL'], extensions: %i[pg_timestamptz]))
   end
 end

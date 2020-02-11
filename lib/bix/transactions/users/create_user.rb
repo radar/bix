@@ -8,8 +8,8 @@ module Bix
         include Import["contracts.users.create_user"]
         include Import["repos.user_repo"]
 
-        def call(input)
-          values = yield validate(input)
+        def call(params)
+          values = yield validate(params)
           user = yield persist(values)
 
           Success(user)

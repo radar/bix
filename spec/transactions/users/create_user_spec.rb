@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Bix::Transactions::Users::CreateUser do
-  let(:user_repo) { double("UserRepo") }
+  let(:user_repo) { double(Bix::Repos::UserRepo) }
   let(:user) { Bix::User.new(id: 1, first_name: "Ryan") }
 
   subject { described_class.new(user_repo: user_repo) }

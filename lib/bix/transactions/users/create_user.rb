@@ -5,8 +5,10 @@ module Bix
         include Dry::Monads[:result]
         include Dry::Monads::Do.for(:call)
 
-        include Import["contracts.users.create_user"]
-        include Import["repos.user_repo"]
+        include Import[
+          "contracts.users.create_user",
+          "repos.user_repo"
+        ]
 
         def call(params)
           values = yield validate(params)

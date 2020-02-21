@@ -12,6 +12,13 @@ gem 'pg'
 gem 'dotenv'
 gem 'rake'
 
+gem "hanami-controller", "~> 1.3"
+gem "hanami-router", "~> 1.3"
+
+gem "rack-test"
+
+gem "puma"
+
 group :test do
   gem 'rspec'
   gem 'database_cleaner-sequel'

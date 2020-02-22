@@ -11,7 +11,7 @@ input = {
 }
 
 create_user = Bix::Transactions::Users::CreateUser.new
-case create_user.call(input)
+case result = create_user.call(input)
 when Success
   puts "User created successfully!"
 when Failure(Dry::Validation::Result)

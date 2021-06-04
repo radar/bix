@@ -14,8 +14,6 @@ module Bix
         dir.default_namespace = "bix"
       end
     end
-
-    # load_paths!('lib')
   end
 
   Import = Dry::AutoInject(Application)

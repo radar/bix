@@ -16,7 +16,7 @@ bin/console
 Then from the console
 
 ```ruby
-user_repo = Bix::Repos::UserRepo.new(Bix::Application['container'])
+user_repo = Bix::Application['repos.user_repo']
 user_repo.create(first_name: "Ryan", last_name: "Bigg", age: 32)
 => #<ROM::Struct::User id=1 first_name="Ryan" last_name="Bigg" age=32 ...>
 

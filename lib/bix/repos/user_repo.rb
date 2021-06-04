@@ -1,3 +1,5 @@
+puts "Hi from user_repo"
+
 module Bix
   module Repos
     class UserRepo < ROM::Repository[:users]
